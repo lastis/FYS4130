@@ -90,8 +90,7 @@ Matrix	Lattice::getFCC(int Nc, double b){
 	return r;
 }
 
-double Random::ran0(long seed)
-{
+double Random::ran0(long* seed){
 
 	#define IA 16807
 	#define IM 2147483647
@@ -100,7 +99,7 @@ double Random::ran0(long seed)
 	#define IR 2836
 	#define MASK 123459876
 
-	long* idum = &seed;
+	long* idum = seed;
 	long     k;
 	double   ans;
 	*idum ^= MASK;
