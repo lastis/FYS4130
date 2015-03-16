@@ -7,25 +7,24 @@ using namespace CPhys;
 using namespace std;
 int blocks = 1e5;
 int N = 1000;
-long seed = 2;
-/* double p = 0.5; */
-/* double p = 0.99; */
-double p = 0.9;
+long seed = 1;
+double p = 0.01;
 
 int main(){
     Vector xSampleVec = Vector(N);
-    /* Vector xsqSampleVec = Vector(N); */
     double* xSample = xSampleVec.getArrayPointer();
-    /* double* xsqSample = xsqVec.getArrayPointer(); */
     Vector xVec = Vector(N);
     Vector xsqVec = Vector(N);
     double* x = xVec.getArrayPointer();
     double* xsq = xsqVec.getArrayPointer();
+    int xi;
     for (int block = 0; block < blocks; block++) {
+        xSample[0] = 1;
+        xi = 1;
         for (int i = 1; i < N; i++) {
             double ran = Random::ran0(&seed);
-            if (ran > p) xSample[i] = xSample[i-1]-1;
-            else xSample[i] = xSample[i-1]+1;
+            if (ran < p) xi = -xi;
+            xSample[i] = xSample[i-1]+xi;
         }
         for (int i = 0; i < N; i++) {
             x[i] += xSample[i];
@@ -38,12 +37,10 @@ int main(){
         x[i] = x[i]/blocks;
     }
 
-
-
     string fName = "x.dat";
     string adress = fName;
     ofstream myFile;
-    cout << "Dumption energies to file : " << fName << endl;
+    cout << "Dumption positions to file : " << fName << endl;
     myFile.open(adress.c_str());
     for (int i = 0; i < N; i++) {
         myFile << x[i] << " ";
