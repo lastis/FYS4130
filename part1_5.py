@@ -6,12 +6,18 @@ import os
 os.system('g++ CPhys.cpp Vector.cpp Matrix.cpp Cube.cpp part1_5_1.cpp -O3')
 os.system('./a.out')
 data = np.loadtxt('x.dat')
-x = data[0]
-bins = data[1]
+yData = data[0]
+x = data[1]
 
-# bins = np.linspace(-100,100,len(x))
+# a = 0.0005
+# y = np.exp(-4)*np.exp(-a*x*x)
+# y = np.log(y)
+xsq = x*x
 
-plt.plot(bins,x)
+
+# plt.plot(bins,x)
+# plt.plot(xsq,y)
+plt.plot(xsq,np.log(yData))
 plt.show()
 
 

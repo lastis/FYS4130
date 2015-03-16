@@ -11,7 +11,7 @@ int nBins = 201;
 double nMax = 100;
 double nMin = -100;
 long seed = 1;
-double p = 0.5;
+double p = 0.9;
 
 int main(){
     double x = 0;
