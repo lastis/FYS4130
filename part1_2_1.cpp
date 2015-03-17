@@ -8,7 +8,7 @@ using namespace std;
 int blocks = 1e5;
 int N = 1000;
 long seed = 1;
-double p = 0;
+double p = 0.1;
 
 int main(){
     Vector xSampleVec = Vector(N);

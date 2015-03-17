@@ -29,9 +29,9 @@ lengthLog = np.log10(length[1:])
 
 
 
-plt.plot(lengthLog,delxsqLog1)
-plt.plot(lengthLog,delxsqLog2)
-# plt.plot(length,xsq)
+# plt.plot(lengthLog,delxsqLog1)
+# plt.plot(lengthLog,delxsqLog2)
+plt.plot(length,xsq)
 # plt.plot(length,x)
 plt.show()
 
