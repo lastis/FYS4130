@@ -36,7 +36,7 @@
 \begin{document}
 \maketitle
 {\color{black!70}
-Problem1: Calculate $\langle X^2\rangle$ for both correlated and uncorrelated velocities by setting $p=1/2, p=1\%$ and $p=10\%$. Calculate the ensemble average with $10^5$ realizations and use $N = 1000$.
+1. Calculate $\langle X^2\rangle$ for both correlated and uncorrelated velocities by setting $p=1/2, p=1\%$ and $p=10\%$. Calculate the ensemble average with $10^5$ realizations and use $N = 1000$.
 }
 
 In figure ?? we can see the difference between the $p$ values.
@@ -67,4 +67,69 @@ but only holds constant value at all steps.
 {\color{black!70} 3. For $p=0.5$, show that we may write 
 $\langle\Delta X^2 \rangle = 2Dt$ and identify the value of $D$.
 }
+
+The average displacement of a random walker with equal probability 
+to walk either directions is $0$. The variance is then simply 
+$\langle X(n)^2\rangle$. 
+\begin{align*}
+	\langle X(n)^2\rangle 
+	&= 
+	\left(\sum_i^n\Delta X_i\right)\left(\sum_j^n\Delta X_j\right)\\
+	\langle X(n)^2\rangle 
+	&= 
+	\sum_i^n\Delta X_i^2 + \sum_{i\neq j}^n\Delta X_i\Delta X_j\\
+	\langle X(n)^2\rangle 
+	&= 
+	l^2 n\\
+\end{align*}
+Where $\Delta X = \pm l$ is the steplength and $n$ is the number of steps. The non-diagonal contribution should be zero as long as the steps are not correlated. 
+
+We can now relate this result to the variance from the diffusion equation by
+defining 
+\begin{align*}
+n \equiv \frac{t}{\Delta t} && 2D \equiv \frac{l^2}{\Delta t}.
+\end{align*}
+\begin{align*}
+\langle X(n)^2\rangle = 2Dt
+\end{align*}
+With the natural units $\Delta t = 1$ and $l = \pm1$, 
+the value of $D$ will be $D = 1/2$.
+
+{\color{black!70} 
+4. If $X(t)$ is taken to be a description of the position of a molecule 
+in a gas, then give a physical interpretation of the $p$-variations.
+In particular, what state of the gas would small $p$ values 
+correspond to?
+}
+
+Small $p$-values would correspond to a long mean displacement of a gas
+molecule. Small $p$ makes it less likely that that particle will collide
+into any other molecules in a given interval $\Delta t$. On the other 
+side, high $p$-values would make it more likely that a molecule would
+collide and change direction. This would be a high density system. 
+
+The system is described by the probability of changing direction, $p$,
+during a step $\Delta n$ but the number of steps in one timestep
+$\Delta t$ is what decides the scale of the system. For instance,
+if we defined $100\Delta t = \Delta n$ for our system at $p = 0.01$
+, we can se that only one step would take us to plateu. 
+
+{\color{black!70} 
+5. Make a histogram of the $X_N$-values to obtain the distribution 
+$P(X)$ for $p=0.5$ and $p = 0.9$. Plot $\ln(P(X))$ as a function
+of $X^2$ and use this to write down an analytic expression for
+$P(X)$. Discuss the difference for the different $p$-values. 
+}
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
