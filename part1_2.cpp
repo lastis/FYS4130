@@ -2,19 +2,24 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <stdlib.h>     // Adds atof function.
 
 using namespace CPhys;
 using namespace std;
 int blocks = 1e5;
 int N = 1000;
 long seed = 1;
-double p = 0.01;
+double p = 0.1;
 
-int main(){
+int main(int argc, const char *argv[]){
+    if (argc == 3) p = atof(argv[2]);
+    cout << "P = " << p << endl;
     Vector xSampleVec = Vector(N);
     double* xSample = xSampleVec.getArrayPointer();
     Vector xVec = Vector(N);
     Vector xsqVec = Vector(N);
+    xVec.reset();
+    xsqVec.reset();
     double* x = xVec.getArrayPointer();
     double* xsq = xsqVec.getArrayPointer();
     int xi;
@@ -37,7 +42,9 @@ int main(){
         x[i] = x[i]/blocks;
     }
 
-    string fName = "x.dat";
+    string fName;
+    if (argc == 3) fName = argv[1];
+    else fName = "x1_2_1.dat";
     string adress = fName;
     ofstream myFile;
     cout << "Dumption positions to file : " << fName << endl;
