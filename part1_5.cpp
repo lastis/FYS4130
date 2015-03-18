@@ -9,8 +9,8 @@ using namespace std;
 int blocks = 1e5;
 int N = 10000;
 int nBins = 201;
-double nMax = 100;
-double nMin = -100;
+double nMax = 301;
+double nMin = -301;
 long seed = 1;
 double p = 0.5;
 
