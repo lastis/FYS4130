@@ -21,9 +21,13 @@ N = len(x)
 length = np.linspace(0,N-1,N);
 lengthLog = np.log10(length[1:])
 
-plt.plot(lengthLog,np.log10(xsq1[1:]))
-plt.plot(lengthLog,np.log10(xsq2[1:]))
-plt.plot(lengthLog,np.log10(xsq3[1:]))
+plt.plot(lengthLog,np.log10(xsq1[1:]),label='p=0.5')
+plt.plot(lengthLog,np.log10(xsq2[1:]),label='p=0.1')
+plt.plot(lengthLog,np.log10(xsq3[1:]),label='p=0.01')
+plt.xlabel("n")
+plt.ylabel("<X^2> ")
+plt.legend(loc='upper right')
+plt.savefig('part1_1.png')
 plt.show()
 
 

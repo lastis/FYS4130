@@ -18,6 +18,7 @@ data = np.loadtxt('x1_5_1.dat')
 # Remove the first and last value for estetics. 
 y1 = data[0]
 x1 = data[1]
+# x1 = x1/np.max(x1)/2
 xsq1 = x1*x1
 y1Log = np.log(y1)
 # Remove some middle points.
@@ -34,11 +35,13 @@ y1LogRed = np.log(y1Red)
 p1, success = optimize.leastsq(errfunc,p0[:], args=(xsq1Red,y1LogRed))
 y1Fit = norfunc(p1,x1)
 y1LogFit = fitfunc(p1,xsq1)
+print "a = ", p1[1]
 
 # Second run. p = 0.9
 data = np.loadtxt('x1_5_2.dat')
 y2 = data[0][60:-60]
 x2 = data[1][60:-60]
+# x2 = x2/np.max(x2)/2
 xsq2 = x2*x2
 y2Log = np.log(y2)
 # Remove some middle points.
@@ -55,18 +58,26 @@ y2LogRed = np.log(y2Red)
 p2, success = optimize.leastsq(errfunc,p0[:], args=(xsq2Red,y2LogRed))
 y2Fit = norfunc(p2,x2)
 y2LogFit = fitfunc(p2,xsq2)
+print "a = ", p2[1]
 
 
 plt.plot(x1,y1Fit)
-plt.plot(x1,y1,"rx")
+plt.plot(x1,y1,"rx", label="p = 0.5")
 plt.plot(x2,y2Fit)
-plt.plot(x2,y2,"bx")
+plt.plot(x2,y2,"bx", label="p = 0.9")
+plt.xlabel("position x")
+plt.ylabel("P(x)")
+plt.legend(loc='upper right')
+plt.savefig('part1_5_1.png')
 plt.show()
-# plt.plot(xsq1,y1LogFit)
-# plt.plot(xsq1,y1Log,"rx")
-# plt.show()
-# plt.plot(xsq2,y2LogFit)
-# plt.plot(xsq2,y2Log,"bx")
-# plt.show()
+plt.plot(xsq1,y1LogFit)
+plt.plot(xsq1,y1Log,"rx",label="p = 0.5")
+plt.plot(xsq2,y2LogFit)
+plt.plot(xsq2,y2Log,"bx",label="p = 0.9")
+plt.xlabel("X^2")
+plt.ylabel("log(P(x))")
+plt.legend(loc='upper right')
+plt.savefig('part1_5_2.png')
+plt.show()
 
 
