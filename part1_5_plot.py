@@ -1,11 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import os
 
 
-os.system('g++ CPhys.cpp Vector.cpp Matrix.cpp Cube.cpp part1_5_1.cpp -O3')
-os.system('./a.out')
-data = np.loadtxt('x.dat')
+# First run. p = 0.5
+data = np.loadtxt('x1_5_1.dat')
 yData = data[0]
 x = data[1]
 
@@ -14,6 +12,7 @@ x = data[1]
 # y = np.log(y)
 xsq = x*x
 
+# Second run. p = 0.9
 
 # plt.plot(bins,x)
 # plt.plot(xsq,y)

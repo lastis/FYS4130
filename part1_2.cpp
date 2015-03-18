@@ -12,6 +12,7 @@ long seed = 1;
 double p = 0.1;
 
 int main(int argc, const char *argv[]){
+    // Second argument is the file name, third is the p-value.
     if (argc == 3) p = atof(argv[2]);
     cout << "P = " << p << endl;
     Vector xSampleVec = Vector(N);

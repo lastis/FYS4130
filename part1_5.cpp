@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <stdlib.h>     // Adds atof function.
 
 using namespace CPhys;
 using namespace std;
@@ -11,9 +12,13 @@ int nBins = 201;
 double nMax = 100;
 double nMin = -100;
 long seed = 1;
-double p = 0.9;
+double p = 0.5;
 
-int main(){
+int main(int argc, const char *argv[]){
+    // Second argument is the file name, third is the p-value.
+    if (argc == 3) p = atof(argv[2]);
+    cout << "P = " << p << endl;
+
     double x = 0;
     Vector binsVec = Vector(nBins);
     binsVec.reset();
@@ -42,7 +47,9 @@ int main(){
     nVec.linspace(nMin,nMax);
     double* n = nVec.getArrayPointer();
 
-    string fName = "x.dat";
+    string fName;
+    if (argc == 3) fName = argv[1];
+    else fName = "x1_5_1.dat";
     string adress = fName;
     ofstream myFile;
     cout << "Dumption positions to file : " << fName << endl;
