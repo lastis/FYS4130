@@ -7,7 +7,7 @@
 using namespace CPhys;
 using namespace std;
 int blocks = 1e5;
-int N = 1000;
+int N = 10000;
 int nBins = 201;
 double nMax = 100;
 double nMin = -100;

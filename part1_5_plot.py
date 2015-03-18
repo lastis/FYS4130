@@ -4,19 +4,25 @@ import matplotlib.pyplot as plt
 
 # First run. p = 0.5
 data = np.loadtxt('x1_5_1.dat')
-yData = data[0]
-x = data[1]
+y1 = data[0]
+x1 = data[1]
+xsq1 = x1*x1
+# Second run. p = 0.9
+data = np.loadtxt('x1_5_2.dat')
+y2 = data[0]
+x2 = data[1]
+xsq2 = x2*x2
 
 # a = 0.0005
 # y = np.exp(-4)*np.exp(-a*x*x)
 # y = np.log(y)
-xsq = x*x
 
-# Second run. p = 0.9
 
-# plt.plot(bins,x)
-# plt.plot(xsq,y)
-plt.plot(xsq,np.log(yData))
+# plt.plot(x1,y1)
+# plt.plot(x2,y2)
+# plt.show()
+plt.plot(xsq1,np.log(y1))
+plt.plot(xsq2,np.log(y2))
 plt.show()
 
 
