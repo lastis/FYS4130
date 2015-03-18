@@ -1,11 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import os
 
 # First run. p = 0.1
-os.system('g++ CPhys.cpp Vector.cpp Matrix.cpp Cube.cpp part1_2_1.cpp -O3')
-os.system('./a.out')
-data = np.loadtxt('x.dat')
+data = np.loadtxt('x1_2_1.dat')
 x = data[0]
 xsq = data[1]
 
@@ -13,9 +10,7 @@ delxsq = np.diff(xsq)
 delxsqLog1 = np.log(delxsq)
 
 # Second run. p = 0.01
-os.system('g++ CPhys.cpp Vector.cpp Matrix.cpp Cube.cpp part1_2_2.cpp -O3')
-os.system('./a.out')
-data = np.loadtxt('x.dat')
+data = np.loadtxt('x1_2_2.dat')
 x = data[0]
 xsq = data[1]
 
