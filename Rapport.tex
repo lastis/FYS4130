@@ -42,7 +42,7 @@ Problem1: Calculate $\langle X^2\rangle$ for both correlated and uncorrelated ve
 In figure ?? we can see the difference between the $p$ values.
 Low values of $p$ makes the walker goes further. 
 
-{\color{black!60}2. Make a logarithmic plot, i.e.e plot the variance 
+{\color{black!70}2. Make a logarithmic plot, i.e.e plot the variance 
 $\log_{10}(\langle\Delta X^2 \rangle))$ as a function of $\log_{10}$ 
 with $t = i$ and identify linear portions of the graphs. Discuss the 
 corresponding early time exponents of $p=1\%$ and $p=10\%$ graphs and
@@ -50,5 +50,21 @@ why they change at later times.
 }
 
 Figure ?? shows $\log_{10}(\langle\Delta X^2 \rangle))$ for the two cases. 
+By looking at $\langle X^2\rangle$ it is hard to interpret what is happening,
+ but now we see clear plateaus. This suggest that after the walkers
+has walked a certain amount of steps it stops moving and holds a mean 
+position around this point. 
 
+The function $n^2 - (n-1)^2 = 2n-1$ is also shown in the plot. This is to
+compare the walkers to a walker which has no chance of turning around.
+In this simple case the mentioned function is the analytical solution. 
+
+Another way to interpret this is to say that the start of the plateu
+is a kind of characteristic length for when the walker becomes a 
+random walker with $p = 0.5$. The same plot for $p = 0.5$ are not shown
+but only holds constant value at all steps. 
+
+{\color{black!70} 3. For $p=0.5$, show that we may write 
+$\langle\Delta X^2 \rangle = 2Dt$ and identify the value of $D$.
+}
 \end{document}
