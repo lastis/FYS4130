@@ -1,0 +1,54 @@
+\documentclass[twocolumn]{article}[10pt]
+\usepackage[english]{babel} 
+\usepackage[latin1]{inputenc} 
+\usepackage{times} 			% Default times font style
+\usepackage[T1]{fontenc} 	% Font encoding
+\usepackage{amsmath} 		% Math package
+\usepackage{mathtools} 		% Adds the declare paired 
+							% delimeter command to make costom \abs and \norm
+\usepackage{breqn}		 	% Adds dmath environment for automated brakeline
+\usepackage{xfrac}			% Adds slanted fractions (sfrac)
+\usepackage{cancel}			% Adds the cancel command, a slash through the symbol(s)
+\usepackage{tabularx}		% Adds adjustable width on tabulars
+\usepackage{cuted}			% Adds the strip command, pagewidth text in a twocolumn
+							% environment. 
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+
+% Start costum \abs \norm 
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+% End costum \abs \norm 
+
+\title{Project FYS4130}
+
+\begin{document}
+\maketitle
+{\color{black!70}
+Problem1: Calculate $\langle X^2\rangle$ for both correlated and uncorrelated velocities by setting $p=1/2, p=1\%$ and $p=10\%$. Calculate the ensemble average with $10^5$ realizations and use $N = 1000$.
+}
+
+In figure ?? we can see the difference between the $p$ values.
+Low values of $p$ makes the walker goes further. 
+
+{\color{black!60}2. Make a logarithmic plot, i.e.e plot the variance 
+$\log_{10}(\langle\Delta X^2 \rangle))$ as a function of $\log_{10}$ 
+with $t = i$ and identify linear portions of the graphs. Discuss the 
+corresponding early time exponents of $p=1\%$ and $p=10\%$ graphs and
+why they change at later times. 
+}
+
+Figure ?? shows $\log_{10}(\langle\Delta X^2 \rangle))$ for the two cases. 
+
+\end{document}
